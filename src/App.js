@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import useCustomState from './providers/state.js'
+import Comment from './components/Comment.js'
 
-function App() {
+export default function App() {
+  const {
+    commentArr,
+    handleAddComment,
+    handleDeleteComment,
+    handleUpdateComment,
+  } = useCustomState()
+  // variable used to determine how deeply nested a given comment is
+  let depth = 0
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <div className='render-list-container'>
+        <ul className='render-list'>
+          {commentArr.map((comment) => {
+            return (
+              <Comment
+                depth={depth}
+                key={comment.id}
+                {...comment}
+                handleAddComment={handleAddComment}
+                handleDeleteComment={handleDeleteComment}
+                handleUpdateComment={handleUpdateComment}
+              />
+            )
+          })}
+        </ul>
+      </div>
+    </main>
+  )
 }
-
-export default App;

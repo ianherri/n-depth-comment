@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+main {
+  box-sizing: border-box;
   min-height: 100vh;
+  min-width: 100vw;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  padding: 24px;
+}
+
+.render-list-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  width: 100%;
+}
+
+.render-list {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.comment-container {
+  box-sizing: border-box;
+  align-self: baseline;
+  display: flex;
+  border-radius: 8px;
+  border: 1px solid black;
+  flex-direction: column;
+  align-items: left;
+  gap: 12px;
+  height: auto;
+  width: auto;
+  padding: 12px;
+  background-color: rgb(38, 46, 48);
+  margin-bottom: 4px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0px 2px 14px 2px rgba(0, 0, 0, 0.25);
+}
+
+.root {
+  background-color: rgb(17, 17, 17);
+}
+
+.comment-container:hover {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.button-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  padding: 0px 0px 0px 8px;
+  gap: 12px;
+}
+
+.children-list {
+  display: flex;
+  gap: 4px;
+  flex-direction: row;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.user-saved {
+  font-weight: 800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-saved {
+  font-weight: 600;
+}
+
+.error-text {
+  color: red;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 24px;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 12px 4px 12px;
+  background-color: darkgrey;
+  transition: all 0.25s ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(74, 107, 199);
+  color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn:hover {
+  background-color: rgb(199, 74, 74);
+  color: rgb(255, 255, 255);
+}
+
+input {
+  width: auto;
+  border: none;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+input:focus {
+  outline: none;
 }
